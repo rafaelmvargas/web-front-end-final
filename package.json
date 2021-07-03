@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "eleventy --serve",
+    "start": "npm run sass && npm run eleventy",
+    "eleventy": "eleventy --serve",
+    "sass": "sass --watch ./src/styles.scss ./src/css/styles.css",
     "build": "eleventy"
   },
   "repository": {
