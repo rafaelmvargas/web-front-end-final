@@ -2,7 +2,9 @@
   <ul>
     {%- for navlink in collections.navigation -%}
     <li>
-      <a href="#" class="navlink-item">{{ navlink.data.title }}</a>
+      <a href="{{ navlink.url }}" class="navlink-item">{{
+        navlink.data.title
+      }}</a>
     </li>
     {%- endfor -ttttttt%}
   </ul>
