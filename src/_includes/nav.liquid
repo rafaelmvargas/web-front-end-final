@@ -1,7 +1,9 @@
 <nav class="navlinks">
   <ul>
     {%- for navlink in collections.navigation -%}
-    <li>{{ navlink.data.title }}</li>
+    <li>
+      <a href="#" class="navlink-item">{{ navlink.data.title }}</a>
+    </li>
     {%- endfor -ttttttt%}
   </ul>
 </nav>
