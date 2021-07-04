@@ -1,3 +1,9 @@
 <body class="{{ pageKind }}">
-  {%- include nav.liquid -%}{{ content }}{%- include footer.liquid -%}
+  <div id="wrapper">
+    {%- include nav.liquid -%}
+    <main>
+      {{ content }}
+      {%- include footer.liquid -%}
+    </main>
+  </div>
 </body>

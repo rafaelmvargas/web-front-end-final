@@ -1,12 +1,79 @@
 $nav-bar-text: white;
-$nav-bar-background: rgb(101, 201, 235);
+$nav-bar-background: rgb(31, 134, 168);
 $nav-bar-link-hover: rgb(53, 53, 185);
 $nav-bar-link-color: white;
 
+nav {
+  // width: 100%;
+  // height: 22px;
+  background-color: $nav-bar-background;
+  position: fixed;
+  list-style-type: none;
+  // z-index: 1;
+  width: 100%;
+  // box-sizing: border-box;
+  // top: 0;
+  // left: 0;
+
+  ul {
+    background-color: $nav-bar-background;
+    display: none;
+    // display: flex;
+    // flex-direction: column;
+    padding: 0px;
+    margin: 0px;
+    // position: absolute;
+    // list-style-type: none;
+    // width: auto; //auto
+    @media (min-width: $breakpoint-lg-desktop) {
+      display: flex;
+    }
+  }
+
+  li {
+    background-color: $nav-bar-background;
+    padding: 1em;
+    // left: -10px;
+  }
+  a {
+    // padding: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    text-decoration: none;
+    padding: 1rem;
+    color: $nav-bar-link-color;
+    display: inline-block;
+    // background-color: transparent;
+  }
+  .active a {
+    font-weight: bold;
+  }
+  li.active {
+    background-color: darken($nav-bar-background, 20%);
+  }
+  @media (min-width: $breakpoint-lg-desktop) {
+    // display: inline-block;
+    display: flex;
+    // flex-direction: row;
+
+    justify-content: space-around;
+    background: $nav-bar-background;
+    text-align: center;
+  }
+}
+.show-navigation-bar nav ul {
+  display: block;
+  // flex-direction: column;
+  // position: absolute;
+  width: 100%;
+}
 #hamburger {
   display: block;
+  position: sticky;
+  background-color: $nav-bar-background;
   padding-top: 1em;
   padding-left: 1em;
+  padding-bottom: 1em;
   width: 100%;
   @media (min-width: $breakpoint-lg-desktop) {
     display: none;
@@ -19,47 +86,4 @@ $nav-bar-link-color: white;
     background-size: cover;
     display: inline-block;
   }
-}
-
-nav {
-  list-style: none;
-  background-color: $nav-bar-background;
-  display: flex;
-
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  ul {
-    padding: 0;
-    @media (min-width: $breakpoint-lg-desktop) {
-      display: flex;
-      justify-content: space-around;
-      background: $nav-bar-background;
-    }
-    li {
-      display: inline-block;
-      text-decoration: none;
-      justify-content: space-between;
-      //   margin-right: 1em;
-      li:hover {
-        background-color: $nav-bar-link-hover;
-      }
-    }
-  }
-  a {
-    color: $nav-bar-link-color;
-    display: inline-block;
-    box-sizing: border-box;
-  }
-}
-
-.nav-links {
-  display: flex;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-link-item {
-  margin-right: 2em;
 }

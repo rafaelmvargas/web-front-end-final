@@ -1,11 +1,9 @@
-<nav class="navlinks">
+<nav>
   <a href="#" id="hamburger"></a>
   <ul>
     {%- for navlink in collections.navigation -%}
-    <li class="{% if navlink.url == page.url %}active{%endif%}">
-      <a href="{{ navlink.url | url }}" class="nav-link-item">{{
-        navlink.data.title
-      }}</a>
+    <li {% if navlink.url == page.url %}class="active"{%endif%}>
+      <a href="{{ navlink.url | url }}">{{ navlink.data.title }}</a>
     </li>
     {%- endfor -%}
   </ul>
