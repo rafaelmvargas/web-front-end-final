@@ -1,4 +1,4 @@
-<body class="{{ pageKind }}">
+<body {{%- if pageKind %}} class="{{ pageKind }}" {{%- endif -%}}>
   <div id="wrapper">
     {%- include nav.liquid -%}
     <main>

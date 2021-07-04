@@ -4,12 +4,16 @@ console.log('hello world!')
 
 function clickHandler(event) {
   console.log(event.target)
-  event.preventDefault()
+  // event.preventDefault()
 
   if (event.target.matches('#hamburger')) {
     showMenu()
     // event.preventDefault()
   }
+}
+
+function keyboardHandler(KeyboardEvent) {
+  console.log(KeyboardEvent)
 }
 
 function showMenu() {
@@ -18,3 +22,4 @@ function showMenu() {
 // Add clickhandler to the page
 
 document.addEventListener('click', clickHandler)
+document.addEventListener('keypress', keyboardHandler)

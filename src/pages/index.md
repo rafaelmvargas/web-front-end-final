@@ -4,6 +4,7 @@ title: Home
 tags: navigation
 pageKind: home
 permalink: /
+accessKey: H
 date: 2021-07-01
 ---
 

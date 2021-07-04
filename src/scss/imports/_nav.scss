@@ -7,6 +7,7 @@ nav {
   // width: 100%;
   // height: 22px;
   background-color: $nav-bar-background;
+  font: 1em sans-serif;
   position: fixed;
   list-style-type: none;
   // z-index: 1;
@@ -37,15 +38,15 @@ nav {
   }
   a {
     // padding: 1rem;
-    width: 100%;
+    // width: 100%;
     box-sizing: border-box;
     text-decoration: none;
-    padding: 2rem;
+    padding: 1.5rem;
     color: $nav-bar-link-color;
     display: inline-block;
     // background-color: transparent;
   }
-  a:hover {
+  li:hover {
     background-color: $nav-bar-link-hover;
   }
   .active a {
@@ -57,7 +58,8 @@ nav {
   @media (min-width: $breakpoint-lg-desktop) {
     // display: inline-block;
     display: flex;
-    // flex-direction: row;
+    flex-direction: row;
+    height: 75px;
 
     justify-content: space-around;
     background: $nav-bar-background;
@@ -74,9 +76,9 @@ nav {
   display: block;
   position: sticky;
   background-color: $nav-bar-background;
-  padding-top: 1em;
+  padding-top: 1.5em;
   padding-left: 1em;
-  padding-bottom: 1em;
+  padding-bottom: 1.5em;
   width: 100%;
   @media (min-width: $breakpoint-lg-desktop) {
     display: none;
