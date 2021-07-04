@@ -1,6 +1,6 @@
 $nav-bar-text: white;
 $nav-bar-background: rgb(31, 134, 168);
-$nav-bar-link-hover: rgb(53, 53, 185);
+$nav-bar-link-hover: darken($nav-bar-background, 20%);
 $nav-bar-link-color: white;
 
 nav {
@@ -32,7 +32,7 @@ nav {
 
   li {
     background-color: $nav-bar-background;
-    padding: 1em;
+    // padding: 1em;
     // left: -10px;
   }
   a {
@@ -40,10 +40,13 @@ nav {
     width: 100%;
     box-sizing: border-box;
     text-decoration: none;
-    padding: 1rem;
+    padding: 2rem;
     color: $nav-bar-link-color;
     display: inline-block;
     // background-color: transparent;
+  }
+  a:hover {
+    background-color: $nav-bar-link-hover;
   }
   .active a {
     font-weight: bold;
