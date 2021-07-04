@@ -1,4 +1,3 @@
-$nav-hamburger-background-color: red;
 $nav-bar-text: white;
 $nav-bar-background: rgb(101, 201, 235);
 $nav-bar-link-hover: rgb(53, 53, 185);
@@ -30,8 +29,14 @@ nav {
   position: fixed;
   width: 100%;
   top: 0;
+  left: 0;
   ul {
     padding: 0;
+    @media (min-width: $breakpoint-lg-desktop) {
+      display: flex;
+      justify-content: space-around;
+      background: $nav-bar-background;
+    }
     li {
       display: inline-block;
       text-decoration: none;
@@ -40,11 +45,12 @@ nav {
       li:hover {
         background-color: $nav-bar-link-hover;
       }
-
-      a {
-        color: $nav-bar-link-color;
-      }
     }
+  }
+  a {
+    color: $nav-bar-link-color;
+    display: inline-block;
+    box-sizing: border-box;
   }
 }
 
