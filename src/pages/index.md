@@ -1,5 +1,4 @@
 ---
-layout: base
 title: Home
 tags: navigation
 pageKind: home
