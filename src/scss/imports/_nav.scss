@@ -1,0 +1,41 @@
+$nav-bar-text: white;
+$nav-bar-background: rgb(101, 201, 235);
+$nav-bar-link-hover: rgb(53, 53, 185);
+$nav-bar-link-color: white;
+
+nav {
+  list-style: none;
+  background-color: $nav-bar-background;
+  display: flex;
+
+  position: fixed;
+  width: 100%;
+  top: 0;
+  ul {
+    padding: 0;
+    li {
+      display: inline-block;
+      text-decoration: none;
+      justify-content: space-between;
+      //   margin-right: 1em;
+      a:hover {
+        color: $nav-bar-link-hover;
+      }
+      @media (min-width: $breakpoint-sm-desktop) {
+        a {
+          color: $nav-bar-link-color;
+        }
+      }
+    }
+  }
+}
+
+.nav-links {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link-item {
+  margin-right: 2em;
+}
