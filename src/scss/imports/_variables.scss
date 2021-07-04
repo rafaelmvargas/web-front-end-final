@@ -1,0 +1,10 @@
+// Used with Media Queries
+$breakpoint-sm-desktop: 769px;
+$breakpoint-lg-desktop: 1281px;
+$breakpoint-uw-desktop: 1921px;
+
+// Used for styling the Navigation Bar
+$nav-bar-text: white;
+$nav-bar-background: rgb(31, 134, 168);
+$nav-bar-link-hover: lighten($nav-bar-background, 20%);
+$nav-bar-link-color: white;

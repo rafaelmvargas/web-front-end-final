@@ -1,24 +1,6 @@
-console.log('hello world!')
+import { clickHandler } from '/js/modules/clickHandler.mjs'
+import { keyboardHandler } from '/js/modules/keyboardHandler.mjs'
 
-//
-
-function clickHandler(event) {
-  console.log(event.target)
-  // event.preventDefault()
-
-  if (event.target.matches('#hamburger')) {
-    showMenu()
-    // event.preventDefault()
-  }
-}
-
-function keyboardHandler(KeyboardEvent) {
-  console.log(KeyboardEvent)
-}
-
-function showMenu() {
-  document.querySelector('body').classList.toggle('show-navigation-bar')
-}
 // Add clickhandler to the page
 
 document.addEventListener('click', clickHandler)
