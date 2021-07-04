@@ -1,7 +1,26 @@
+$nav-hamburger-background-color: red;
 $nav-bar-text: white;
 $nav-bar-background: rgb(101, 201, 235);
 $nav-bar-link-hover: rgb(53, 53, 185);
 $nav-bar-link-color: white;
+
+#hamburger {
+  display: block;
+  padding-top: 1em;
+  padding-left: 1em;
+  width: 100%;
+  @media (min-width: $breakpoint-lg-desktop) {
+    display: none;
+  }
+  &::after {
+    content: '';
+    background: url(../img/nav-icon.png) no-repeat;
+    width: 22px;
+    height: 22px;
+    background-size: cover;
+    display: inline-block;
+  }
+}
 
 nav {
   list-style: none;
@@ -18,13 +37,12 @@ nav {
       text-decoration: none;
       justify-content: space-between;
       //   margin-right: 1em;
-      a:hover {
-        color: $nav-bar-link-hover;
+      li:hover {
+        background-color: $nav-bar-link-hover;
       }
-      @media (min-width: $breakpoint-sm-desktop) {
-        a {
-          color: $nav-bar-link-color;
-        }
+
+      a {
+        color: $nav-bar-link-color;
       }
     }
   }
