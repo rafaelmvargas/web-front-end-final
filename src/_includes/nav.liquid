@@ -2,9 +2,9 @@
   <a href="#" id="hamburger"></a>
   <ul>
     {%- for navlink in collections.navigation -%}
-    <li {% if navlink.url == page.url %}class="active"{%endif%}>
+    <li {%if navlink.url == page.url%}class="active"{%endif%}>
       <a href="{{ navlink.url | url }}">{{ navlink.data.title }}</a>
     </li>
-    {%- endfor -%}
+    {%endfor%}
   </ul>
 </nav>
