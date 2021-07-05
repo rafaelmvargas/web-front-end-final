@@ -1,4 +1,6 @@
-@import 'imports/variables';
-@import 'imports/base';
-@import 'imports/nav';
-@import 'imports/body';
+@import "imports/layout/variables";
+@import "imports/layout/base";
+@import "imports/layout/nav";
+@import "imports/layout/body";
+@import "imports/components/pokemonSummary";
+@import "imports/components/pokemonDetails";
