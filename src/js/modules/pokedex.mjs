@@ -24,7 +24,7 @@ function setupPokeDex() {
 
 function listPokemons() {
   let pokedex = JSON.parse(localStorage.getItem("pokedex"));
-  (document.querySelector("main").innerHTML = pokedex.results.map(
+  (document.querySelector("main").innerHTML += pokedex.results.map(
     (pokemon) =>
       `<div><a href="#" id=${pokemon.name}>${pokemon.name}</a></div><br>`
   )),
