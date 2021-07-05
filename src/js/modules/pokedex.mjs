@@ -22,28 +22,49 @@ function setupPokeDex() {
   }
 }
 
+function getPokedex() {
+  let pokedex = JSON.parse(localStorage.getItem("pokedex"));
+  return pokedex;
+}
+
 function listPokemons() {
   let pokedex = JSON.parse(localStorage.getItem("pokedex"));
-  (document.querySelector("main").innerHTML += pokedex.results.map(
-    (pokemon) =>
-      `<div><a href="#" id=${pokemon.name}>${pokemon.name}</a></div><br>`
-  )),
-    console.log(pokedex.results[3].name, "Hello World!!!!!");
-  console.log(pokedex.results.map((pokemon) => `${pokemon.name}<br>`));
-  console.log(pokedex.results[1].name, "Hiiiii");
-  console.log(pokedex.results[1].name, "Hiiiii");
+
+  document.querySelector(".pokemonSummary").innerHTML += pokedex.results
+    .map(
+      (pokemon) =>
+        `<div><a href="#" class="pokemon" id="${pokemon.name}">${pokemon.name}</a></div><br>`
+    )
+    .join("");
+  console.log(pokedex.results[3].name, "Hello World!!!!!");
+  console.log(pokedex.results.map((pokemon) => `${pokemon.name}`));
+
+  let test = {};
+  test = fetchPokemonData(42);
+  console.log(test);
 }
 
 function fetchPokemonData(index) {
   let onePokemonAPI = PokemonAPI + `${index}/`;
+  let returnCard = {};
 
-  fetch(onePokemonAPI)
+  returnCard = fetch(onePokemonAPI)
     .then((response) => response.json())
-    .then((pokemon) =>
-      console.log(pokemon.sprites.other["official-artwork"].front_default)
-    );
+    .then((data) => {
+      // console.log(data.sprites.other["official-artwork"]);
 
-    return {"name":index, "height":"40"}
+      return {
+        index: index,
+        name: data.name,
+        types: data.types,
+        moves: data.moves,
+        abilities: data.abilities,
+        height: 40,
+        image: data.sprites.other["official-artwork"],
+      };
+    });
+
+  return returnCard;
 }
 
 // pokemon.sprites.other["official-artwork"].front_default
@@ -52,4 +73,6 @@ function fetchPokemonData(index) {
 
 // Store in localStorage
 
-export { fetchPokemonData, setupPokeDex };
+// get 251 pokemon
+
+export { fetchPokemonData, getPokedex, setupPokeDex };

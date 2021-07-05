@@ -1,7 +1,8 @@
+import { getPokedex } from "./pokedex.mjs";
 import { fetchPokemonData } from "./pokedex.mjs";
 
 function clickHandler(event) {
-  console.log(event.target.id);
+  console.log(event.target);
   event.preventDefault();
 
   if (event.target.matches("#hamburger")) {
@@ -9,15 +10,9 @@ function clickHandler(event) {
     // event.preventDefault()
   }
 
-  if (event.target.id) {
-    let data = fetchPokemonData(event.target.id);
-    let el = document.querySelector(`#${event.target.id}`)
-    let parentElement = el.parentElement
-    let div = document.createElement('div')
-    div.innerText = data.height
-    parentElement.appendChild(div)
-    // let el = document.querySelector("pokemon-data-height"); 
-    // el.innerText += data.height;
+
+  if (event.target.matches('.pokemon')) {
+    console.log(event.target.id)
   }
 }
 
