@@ -1,4 +1,4 @@
-const CatalogAPI = `https://pokeapi.co/api/v2/pokemon/?offset=0&limit=10`;
+const CatalogAPI = `https://pokeapi.co/api/v2/pokemon/?offset=0&limit=251`;
 const PokemonAPI = `https://pokeapi.co/api/v2/pokemon/`;
 
 // Check to see if data in local storage
