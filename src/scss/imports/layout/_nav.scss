@@ -14,7 +14,7 @@ nav {
 
     list-style-type: none;
 
-    @media (min-width: $breakpoint-lg-desktop) {
+    @media (min-width: $breakpoint-sm-desktop) {
       display: flex;
     }
   }
@@ -38,10 +38,10 @@ nav {
   li.active {
     background-color: darken($nav-bar-background, 20%);
   }
-  @media (min-width: $breakpoint-lg-desktop) {
+  @media (min-width: $breakpoint-sm-desktop) {
     display: flex;
     flex-direction: row;
-
+    
     justify-content: space-around;
     background: $nav-bar-background;
     text-align: center;
@@ -59,7 +59,7 @@ nav {
   padding-left: 1em;
   padding-bottom: $nav-bar-padding;
   width: 100%;
-  @media (min-width: $breakpoint-lg-desktop) {
+  @media (min-width: $breakpoint-sm-desktop) {
     display: none;
   }
   &::after {
