@@ -6,4 +6,5 @@ document.addEventListener("click", clickHandler);
 
 setupPokeDex();
 fetchPokemonData(1);
-console.log("---");
+fetchPokemonData("mew");
+console.log(fetchPokemonData("mew"));
