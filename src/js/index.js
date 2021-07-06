@@ -8,7 +8,7 @@ document.addEventListener("click", clickHandler);
 if (true) {
   const pageKind = document.querySelector("body");
   if (pageKind.className === "home") {
-    applyPokeGrid(pageKind);
+    applyPokeGrid();
     setupPokeDex();
   }
 }
