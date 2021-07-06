@@ -4,6 +4,15 @@
   align-items: center;
   justify-content: space-around;
 }
+
+.pokeGrid {
+  @media (min-width: $breakpoint-sm-desktop) {
+    background-color: #666;
+  }
+  @media (min-width: $breakpoint-lg-desktop) {
+    background-color: rgb(151, 151, 241);
+  }
+}
 .pokemon {
   img {
     width: 100px;
