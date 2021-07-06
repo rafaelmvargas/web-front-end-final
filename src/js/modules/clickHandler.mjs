@@ -3,7 +3,7 @@ import { fetchPokemonData } from "./pokedex.mjs";
 
 function clickHandler(event) {
   // console.log(event.target);
-  event.preventDefault();
+  // event.preventDefault();
 
   if (event.target.matches("#hamburger")) {
     showMenu();

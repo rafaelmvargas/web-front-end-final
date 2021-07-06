@@ -1,4 +1,4 @@
-const CatalogAPI = `https://pokeapi.co/api/v2/pokemon/?offset=0&limit=251`;
+const CatalogAPI = `https://pokeapi.co/api/v2/pokemon/?offset=0&limit=21`;
 const PokemonAPI = `https://pokeapi.co/api/v2/pokemon/`;
 
 // Check to see if data in local storage
@@ -34,15 +34,9 @@ function makePokemonTable() {
   let done = pokedex.results.map(function renderDivs(pokemon) {
     // Promises start!
     let info = fetchPokemonData(pokemon.name);
-    // console.log(info, "Wassup");
     return info;
   });
-  // .map(
-  //   (pokemon) => {
-  //   // info = fetchPokemonData(pokemon);
-  //   }
-  // )
-  // .join("");
+
   let promiseCatch = Promise;
   const caught = promiseCatch.all(done).then((values) => {
     console.log(values, "fuck yeah");
@@ -53,8 +47,6 @@ function makePokemonTable() {
       </a></div>`;
     }
   });
-
-  // console.log(pokedex.results.map((pokemon) => pokemon.name));
 }
 
 function fetchPokemonData(index) {
@@ -72,8 +64,6 @@ function fetchPokemonData(index) {
       };
       return newData;
     });
-
-  // console.log(returnCard);
   return returnCard;
 }
 

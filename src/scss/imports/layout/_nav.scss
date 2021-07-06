@@ -1,9 +1,10 @@
 nav {
   background-color: $nav-bar-background;
   font: 1em sans-serif;
-  position: fixed;
+  position: absolute;
+  top: 0;
   list-style-type: none;
-  z-index: 1;
+  // z-index: 1;
   width: 100%;
 
   ul {

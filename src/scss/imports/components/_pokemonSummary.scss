@@ -1,5 +1,16 @@
+.pokemonSummary {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-around;
+}
 .pokemon {
+  img {
+    width: 100px;
+    height: 100px;
+  }
   a {
     text-transform: capitalize;
+    text-align: center;
   }
 }

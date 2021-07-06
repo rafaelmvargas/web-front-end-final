@@ -1,6 +1,6 @@
 <body {{%- if pageKind %}} class="{{ pageKind }}" {{%- endif -%}}>
+  {%- include nav.liquid -%}
   <div id="wrapper">
-    {%- include nav.liquid -%}
     <main>
       {% include components/pokemonSummary.html %} {% include
       components/pokemonDetails.html %}
