@@ -21,6 +21,8 @@
 }
 .pokemonCard {
   display: flex;
+  height: 200px;
+  flex-flow: column wrap;
   justify-content: center;
   img {
     height: 180px;
@@ -33,8 +35,6 @@
     text-transform: capitalize;
   }
   .monster-name {
-    position: absolute;
     margin: 0 auto;
-    justify-content: center;
   }
 }

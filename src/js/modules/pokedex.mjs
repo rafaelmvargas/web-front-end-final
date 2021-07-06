@@ -37,8 +37,7 @@ function makePokemonTable() {
     return info;
   });
 
-  let promiseCatch = Promise;
-  promiseCatch.all(done).then((values) => {
+  Promise.all(done).then((values) => {
     for (const [item, monster] of values.entries()) {
       pokemonSummary.innerHTML += `<div class="pokemonCard" id="${monster.name}">
       <img src="${monster.imageUrl}">
