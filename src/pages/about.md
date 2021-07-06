@@ -1,5 +1,6 @@
 ---
 title: About
+pageKind: about
 accessKey: a
 ---
 
