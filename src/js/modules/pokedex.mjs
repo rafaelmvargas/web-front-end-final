@@ -1,7 +1,4 @@
-const CatalogAPI = `https://pokeapi.co/api/v2/pokemon/?offset=0&limit=21`;
-const PokemonAPI = `https://pokeapi.co/api/v2/pokemon/`;
-
-// Check to see if data in local storage
+import { CatalogAPI, PokemonAPI } from "./api.mjs";
 
 function setupPokeDex() {
   let pokeStore = window.localStorage;
@@ -32,7 +29,6 @@ function makePokemonTable() {
   var pokemonSummary = document.querySelector(".pokemonSummary");
 
   let done = pokedex.results.map(function renderDivs(pokemon) {
-    // Promises start!
     let info = fetchPokemonData(pokemon.name);
     return info;
   });
@@ -45,10 +41,6 @@ function makePokemonTable() {
       </a>
        </div>`;
     }
-
-    /**
-     * convert to unordered list
-     */
   });
 }
 
@@ -58,7 +50,6 @@ function fetchPokemonData(index) {
     .then((response) => response.json())
     .then((data) => {
       let newData = {
-        // index: index,
         name: data.name,
         types: data.types,
         moves: data.moves,
@@ -69,13 +60,5 @@ function fetchPokemonData(index) {
     });
   return returnCard;
 }
-
-// pokemon.sprites.other["official-artwork"].front_default
-
-// If not in local storage, get
-
-// Store in localStorage
-
-// get 251 pokemon
 
 export { fetchPokemonData, getPokedex, setupPokeDex };
