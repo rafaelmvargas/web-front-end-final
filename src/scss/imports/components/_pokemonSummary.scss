@@ -1,22 +1,31 @@
 .pokemonSummary {
   display: flex;
   flex-flow: row wrap;
+  flex-basis: 33%;
   align-items: center;
   justify-content: space-around;
 }
 
 .pokeGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+
   @media (min-width: $breakpoint-sm-desktop) {
+    display: grid;
+    flex-flow: row wrap;
+    grid-template-columns: 2fr 1fr;
     background-color: #666;
   }
   @media (min-width: $breakpoint-lg-desktop) {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
     background-color: rgb(151, 151, 241);
   }
 }
 .pokemon {
   img {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
   }
   a {
     text-transform: capitalize;
