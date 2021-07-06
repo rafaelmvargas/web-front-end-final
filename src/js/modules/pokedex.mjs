@@ -18,7 +18,7 @@ function setupPokeDex() {
       });
   } else {
     console.log("pokedex found");
-    listPokemons();
+    makePokemonTable();
   }
 }
 
@@ -27,16 +27,34 @@ function getPokedex() {
   return pokedex;
 }
 
-function listPokemons() {
-  let pokedex = JSON.parse(localStorage.getItem("pokedex"));
+function makePokemonTable() {
+  let pokedex = getPokedex();
 
-  document.querySelector(".pokemonSummary").innerHTML += pokedex.results
-    .map(
-      (pokemon) =>
-        `<div><a href="#" class="pokemon" id="${pokemon.name}">${pokemon.name}</a></div><br>`
-    )
+  let pokemonSummary = document.querySelector(".pokemonSummary").innerHTML;
+
+  console.log(pokedex);
+
+  pokemonSummary +=
+  pokedex.results
+    .map(function renderDivs(pokemon) {
+      // console.log(pokemon, "hmm")
+      let info = fetchPokemonData(pokemon.name);
+      // console.log(info, "Wassup");
+
+      return `<div class="pokemon" id="${info.name}"><a href="#" >
+        <img src="${info.image}">
+        ${info.name}
+        </a></div><br>`;
+    })
+    // .map(
+    //   (pokemon) => {
+    //   // info = fetchPokemonData(pokemon);
+    //   `<div class="pokemon" id="${pokemon.name}"><a href="#" >
+    //     <img src="${pokemon.image}">
+    //     ${pokemon.name}
+    //     </a></div><br>`}
+    // )
     .join("");
-  console.log(pokedex.results[3].name, "Hello World!!!!!");
   console.log(pokedex.results.map((pokemon) => `${pokemon.name}`));
 
   let test = {};
@@ -44,16 +62,15 @@ function listPokemons() {
   console.log(test);
 }
 
-function fetchPokemonData(index) {
+async function fetchPokemonData(index) {
   let onePokemonAPI = PokemonAPI + `${index}/`;
-  let returnCard = {};
-
-  returnCard = fetch(onePokemonAPI)
+  let returnCard = await fetch(onePokemonAPI)
     .then((response) => response.json())
     .then((data) => {
       // console.log(data.sprites.other["official-artwork"]);
 
-      return {
+      let newData = {
+
         index: index,
         name: data.name,
         types: data.types,
@@ -61,7 +78,9 @@ function fetchPokemonData(index) {
         abilities: data.abilities,
         height: 40,
         image: data.sprites.other["official-artwork"],
-      };
+      }
+      console.log(newData)
+      return newData;
     });
 
   return returnCard;
