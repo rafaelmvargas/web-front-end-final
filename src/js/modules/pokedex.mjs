@@ -29,60 +29,58 @@ function getPokedex() {
 
 function makePokemonTable() {
   let pokedex = getPokedex();
-
+  console.log(pokedex);
   let pokemonSummary = document.querySelector(".pokemonSummary").innerHTML;
 
-  console.log(pokedex);
+  let done = pokedex.results.map(function renderDivs(pokemon) {
+    // console.log(pokemon, "hmm")
+    let info = {};
+    info = fetchPokemonData(pokemon.name);
+    // console.log(info, "Wassup");
 
-  pokemonSummary +=
-  pokedex.results
-    .map(function renderDivs(pokemon) {
-      // console.log(pokemon, "hmm")
-      let info = fetchPokemonData(pokemon.name);
-      // console.log(info, "Wassup");
+    return info;
+  });
+  // .map(
+  //   (pokemon) => {
+  //   // info = fetchPokemonData(pokemon);
+  //   `<div class="pokemon" id="${pokemon.name}"><a href="#" >
+  //     <img src="${pokemon.image}">
+  //     ${pokemon.name}
+  //     </a></div><br>`}
+  // )
+  // .join("");
+  console.log(done);
+let promiseCatch = Promise
 
-      return `<div class="pokemon" id="${info.name}"><a href="#" >
-        <img src="${info.image}">
-        ${info.name}
-        </a></div><br>`;
-    })
-    // .map(
-    //   (pokemon) => {
-    //   // info = fetchPokemonData(pokemon);
-    //   `<div class="pokemon" id="${pokemon.name}"><a href="#" >
-    //     <img src="${pokemon.image}">
-    //     ${pokemon.name}
-    //     </a></div><br>`}
-    // )
-    .join("");
-  console.log(pokedex.results.map((pokemon) => `${pokemon.name}`));
+  promiseCatch.all(done).then((values) => {
+    console.log(values,"fuck yeah");
+  });
+  // console.log(pokedex.results.map((pokemon) => pokemon.name));
 
   let test = {};
   test = fetchPokemonData(42);
   console.log(test);
 }
 
-async function fetchPokemonData(index) {
+function fetchPokemonData(index) {
   let onePokemonAPI = PokemonAPI + `${index}/`;
-  let returnCard = await fetch(onePokemonAPI)
+  let returnCard = fetch(onePokemonAPI)
     .then((response) => response.json())
     .then((data) => {
       // console.log(data.sprites.other["official-artwork"]);
 
       let newData = {
-
-        index: index,
+        // index: index,
         name: data.name,
         types: data.types,
         moves: data.moves,
         abilities: data.abilities,
-        height: 40,
-        image: data.sprites.other["official-artwork"],
-      }
-      console.log(newData)
+        imageUrl: data.sprites.other["official-artwork"].front_default,
+      };
       return newData;
     });
 
+  // console.log(returnCard);
   return returnCard;
 }
 
