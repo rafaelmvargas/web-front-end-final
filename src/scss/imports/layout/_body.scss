@@ -10,11 +10,17 @@
   // justify-content: center;
 }
 
-
-
 body {
   margin: 0 auto;
 }
 main {
   margin-top: 75px;
+}
+
+.about {
+  #wrapper {
+    background: rgb(252, 186, 196);
+    font-family: sans-serif;
+    margin: 0 auto;
+  }
 }

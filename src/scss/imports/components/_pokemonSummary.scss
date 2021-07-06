@@ -1,7 +1,6 @@
 .pokemonSummary {
   display: flex;
   flex-flow: row wrap;
-
   align-items: center;
   justify-content: space-around;
 }
@@ -9,11 +8,11 @@
 .pokeGrid {
   display: grid;
   grid-template-columns: 1fr;
+  background-color: rgb(222, 233, 222);
 
   @media (min-width: $breakpoint-sm-desktop) {
     flex-flow: row wrap;
     grid-template-columns: 1fr 1fr 1fr;
-    background-color: #666;
   }
   @media (min-width: $breakpoint-lg-desktop) {
     background-color: rgb(151, 151, 241);
@@ -24,6 +23,9 @@
   height: 200px;
   flex-flow: column wrap;
   justify-content: center;
+  &:hover {
+    background: lightseagreen;
+  }
   img {
     height: 180px;
     width: 180px;
