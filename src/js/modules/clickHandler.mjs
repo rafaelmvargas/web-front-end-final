@@ -12,7 +12,7 @@ function clickHandler(event) {
 
 
   if (event.target.matches('.pokemon')) {
-    console.log(event.target.id)
+    console.log(event.target.id, "pokemon!")
   }
 }
 

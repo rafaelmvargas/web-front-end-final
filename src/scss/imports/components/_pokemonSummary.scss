@@ -1,7 +1,7 @@
 .pokemonSummary {
   display: flex;
   flex-flow: row wrap;
-  flex-basis: 33%;
+
   align-items: center;
   justify-content: space-around;
 }
@@ -9,9 +9,8 @@
 .pokeGrid {
   display: grid;
   grid-template-columns: 1fr;
-  
+
   @media (min-width: $breakpoint-sm-desktop) {
-    display: grid;
     flex-flow: row wrap;
     grid-template-columns: 1fr 1fr 1fr;
     background-color: #666;
@@ -20,14 +19,22 @@
     background-color: rgb(151, 151, 241);
   }
 }
-.pokemon {
-  margin: 0 auto;
+.pokemonCard {
+  display: flex;
+  justify-content: center;
   img {
-    width: 150px;
-    height: 150px;
+    height: 180px;
+    width: 180px;
+    margin: 0 auto;
   }
   a {
+    display: block;
+    margin: 0 auto;
     text-transform: capitalize;
-    text-align: center;
+  }
+  .monster-name {
+    position: absolute;
+    margin: 0 auto;
+    justify-content: center;
   }
 }

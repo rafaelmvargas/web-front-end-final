@@ -40,10 +40,11 @@ function makePokemonTable() {
   let promiseCatch = Promise;
   promiseCatch.all(done).then((values) => {
     for (const [item, monster] of values.entries()) {
-      pokemonSummary.innerHTML += `<div class="pokemon" id="${monster.name}"><a href="#" >
-       <img src="${monster.imageUrl}">
-       ${monster.name}
-      </a></div>`;
+      pokemonSummary.innerHTML += `<div class="pokemonCard" id="${monster.name}">
+      <img src="${monster.imageUrl}">
+      <div class="monster-name"><a href="#" class="pokemon" id="${monster.name}">${monster.name}<div>
+      </a>
+       </div>`;
     }
   });
 }
